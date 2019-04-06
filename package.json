@@ -1,0 +1,57 @@
+{
+  "name": "blog.taevel.kr",
+  "private": true,
+  "description": "Taehoon's Blog",
+  "version": "1.0.0",
+  "author": "Taehoon <taevel02@gmail.com>",
+  "dependencies": {
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-prettier": "^4.1.0",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-react": "^7.12.4",
+    "gatsby": "^2.3.5",
+    "gatsby-image": "^2.0.37",
+    "gatsby-plugin-manifest": "^2.0.26",
+    "gatsby-plugin-offline": "^2.0.25",
+    "gatsby-plugin-react-helmet": "^3.0.11",
+    "gatsby-plugin-sharp": "^2.0.32",
+    "gatsby-source-filesystem": "^2.0.28",
+    "gatsby-transformer-sharp": "^2.1.17",
+    "prop-types": "^15.7.2",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-helmet": "^5.2.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.3",
+    "@babel/plugin-proposal-class-properties": "^7.4.0",
+    "@babel/plugin-proposal-export-namespace-from": "^7.2.0",
+    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
+    "babel-loader": "^8.0.5",
+    "babel-preset-gatsby": "^0.1.11",
+    "prettier": "^1.16.4",
+    "styled-components": "^4.2.0"
+  },
+  "keywords": [
+    "gatsby",
+    "blog"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "build": "gatsby build",
+    "dev": "gatsby develop",
+    "format": "prettier --write src/**/*.{js,jsx}",
+    "lint": "eslint . --ext .js,.jsx",
+    "start": "yarn run dev",
+    "serve": "gatsby serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/taehoon02/blog.taevel.kr.git"
+  },
+  "bugs": {
+    "url": "https://github.com/taehoon02/blog.taevel.kr/issues"
+  }
+}

@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `blog.taevel.kr`,
+    title: `Taehoon's Blog`,
     description: `Taehoon's Blog`,
     author: `@taehoon02`,
   },
@@ -9,8 +9,8 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `images`,
-        path: `${__dirname}/src/*`,
+        name: `pages`,
+        path: `${__dirname}/src/pages`,
       },
     },
     `gatsby-transformer-sharp`,
@@ -18,8 +18,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `blog.taevel.kr`,
-        short_name: `blog`,
+        name: `Taehoon's Blog`,
+        short_name: `Taehoon's Blog`,
         start_url: `/`,
         background_color: `#663399`,
         theme_color: `#663399`,
@@ -27,27 +27,6 @@ module.exports = {
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
-    {
-      resolve: `gatsby-plugin-sass`,
-      options: {
-        includePaths: `src/scss/*`,
-      },
-    },
-    {
-      resolve: `gatsby-transformer-remark`,
-      options: {
-        plugins: [
-          {
-            resolve: `gatsby-remark-prismjs`,
-            options: {
-              classPrefix: 'language-',
-              inlineCodeMarker: null,
-              showLineNumbers: false,
-              noInlineHighlight: false,
-            },
-          },
-        ],
-      },
-    },
+    `gatsby-plugin-sass`,
   ],
 };

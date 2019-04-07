@@ -10,7 +10,7 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
-        path: `${__dirname}/app/images`,
+        path: `${__dirname}/src/*`,
       },
     },
     `gatsby-transformer-sharp`,
@@ -24,13 +24,13 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `app/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
     {
       resolve: `gatsby-plugin-sass`,
       options: {
-        includePaths: `app/scss/*`,
+        includePaths: `src/scss/*`,
       },
     },
     {

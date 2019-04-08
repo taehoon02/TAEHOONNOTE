@@ -86,7 +86,6 @@ export const pageQuery = graphql`
         title
         date(formatString: "YYYY년 MM원 DD일")
         category
-        tags
       }
     }
   }

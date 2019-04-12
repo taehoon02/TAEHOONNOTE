@@ -7,7 +7,14 @@
           "browsers": [">0.25%", "not dead"]
         }
       }
-    ]
+    ],
+    [
+      "@babel/preset-env",
+      {
+        "useBuiltIns": "entry"
+      }
+    ],
+    ["@babel/preset-react"]
   ],
   "plugins": [
     "@babel/plugin-syntax-dynamic-import",

@@ -169,7 +169,7 @@ class Header extends React.Component {
             </SocialLink>
             <SocialLink
               github
-              href="https://github.com/taehoon02/blog.taevel.kr"
+              href="https://github.com/taehoon02"
               target="_blank"
             >
               <i className="fab fa-github" />

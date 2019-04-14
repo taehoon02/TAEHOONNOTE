@@ -1,19 +1,8 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import styled, { css } from 'styled-components';
-import numeral from 'numeral';
 import axios from 'axios';
-
-numeral.register('locale', 'fs', {
-  abbreviations: {
-    thousand: 'K',
-    million: 'M',
-    billion: 'B',
-    trillion: 'T',
-  },
-});
-
-numeral.locale('fs');
+import numeral from 'numeral';
 
 const Container = styled.div`
   display: flex;
@@ -143,12 +132,12 @@ class Header extends React.Component {
         `https://api.instagram.com/v1/users/self/?access_token=6861791951.1677ed0.394eae8c653c41b7a34afffb65400c19`,
       )
       .then(res => {
-        const num = numeral(res.data.data.counts.followed_by).format('0 a');
+        const num = numeral(res.data.data.counts.followed_by).format('0a');
         this.setState({ instagramFollowers: num });
       });
 
     axios.get(`https://api.github.com/users/taehoon02/followers`).then(res => {
-      const num = numeral(res.data.length).format('0 a');
+      const num = numeral(res.data.length).format('0a');
       this.setState({ githubFollowers: num });
     });
   }

@@ -6,6 +6,7 @@
   "author": "Taehoon <taevel02@gmail.com>",
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.8.1",
+    "axios": "^0.18.0",
     "core-js": "2",
     "gatsby": "^2.3.5",
     "gatsby-image": "^2.0.37",
@@ -24,6 +25,7 @@
     "gatsby-source-filesystem": "^2.0.28",
     "gatsby-transformer-remark": "^2.3.8",
     "gatsby-transformer-sharp": "^2.1.17",
+    "numeral": "^2.0.6",
     "prismjs": "^1.16.0",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",

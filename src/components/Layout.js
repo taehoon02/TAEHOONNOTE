@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Header from './Header';
+import Navbar from './Navbar';
 
 class Layout extends React.Component {
   render() {
@@ -9,6 +10,11 @@ class Layout extends React.Component {
     return (
       <div>
         <Header />
+        <Navbar />
+        <br />
+        <br />
+        <br />
+        <br />
         <main>{children}</main>
         <footer>
           © {new Date().getFullYear()}, Built with

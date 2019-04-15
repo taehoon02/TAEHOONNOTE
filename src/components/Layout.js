@@ -2,6 +2,7 @@ import React from 'react';
 
 import Header from './Header';
 import Navbar from './Navbar';
+import Footer from './Footer';
 
 class Layout extends React.Component {
   render() {
@@ -16,11 +17,11 @@ class Layout extends React.Component {
         <br />
         <br />
         <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer>
+        <br />
+        <br />
+        <br />
+        <br />
+        <Footer />
       </div>
     );
   }

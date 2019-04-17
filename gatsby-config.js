@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: `Taehoon's Blog`,
-    description: `Taehoon's Blog`,
+    title: `태훈노트`,
+    description: `태훈노트`,
     author: `@taehoon02`,
     social: {
       github: `https://github.com/taehoon02`,
@@ -54,11 +54,11 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Taehoon's Blog`,
-        short_name: `Taehoon's Blog`,
+        name: `태훈노트`,
+        short_name: `태훈노트`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: `#fff`,
+        theme_color: `#fff`,
         display: `minimal-ui`,
         icon: `src/assets/favicon.png`, // This path is relative to the root of the site.
       },

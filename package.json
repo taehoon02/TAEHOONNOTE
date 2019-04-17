@@ -1,7 +1,7 @@
 {
-  "name": "blog.taevel.kr",
+  "name": "TAEHOONNOTE",
   "private": true,
-  "description": "Taehoon's Blog",
+  "description": "Tahoon Note",
   "version": "1.0.0",
   "author": "Taehoon <taevel02@gmail.com>",
   "dependencies": {

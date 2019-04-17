@@ -1,11 +1,10 @@
 module.exports = {
   siteMetadata: {
     title: `태훈노트`,
-    description: `태훈노트`,
+    description: `평범한 10대가 내 이야기를 씁니다.`,
     author: `@taehoon02`,
     social: {
       github: `https://github.com/taehoon02`,
-      facebook: `https://www.facebook.com/taehoon02`,
       instagram: `https://www.instagram.com/jaytaehoon_`,
     },
   },

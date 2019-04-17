@@ -32,8 +32,7 @@ function SEO({ description, lang, meta, keywords, title }) {
       htmlAttributes={{
         lang,
       }}
-      title={title}
-      titleTemplate={`%s | ${site.siteMetadata.title}`}
+      title="태훈노트"
       meta={[
         {
           name: `description`,
@@ -82,10 +81,10 @@ function SEO({ description, lang, meta, keywords, title }) {
 }
 
 SEO.defaultProps = {
-  lang: `en`,
+  lang: `ko`,
   meta: [],
   keywords: [],
-  description: ``,
+  description: `평범한 10대가 내 이야기를 씁니다.`,
 };
 
 SEO.propTypes = {

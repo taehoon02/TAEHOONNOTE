@@ -1,65 +1,36 @@
+require('dotenv').config({
+  path: `.env`,
+});
+
 module.exports = {
   siteMetadata: {
     title: `태훈노트`,
-    description: `평범한 10대가 내 이야기를 씁니다.`,
+    description: `평범한 10대가 이야기를 씁니다.`,
     author: `@taehoon02`,
-    social: {
-      github: `https://github.com/taehoon02`,
-      instagram: `https://www.instagram.com/jaytaehoon_`,
-    },
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-offline`,
     {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `posts`,
-        path: `${__dirname}/posts`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `assets`,
-        path: `${__dirname}/src/assets`,
-      },
-    },
-    {
       resolve: `gatsby-transformer-remark`,
       options: {
-        plugins: [
-          {
-            resolve: `gatsby-remark-images`,
-            options: {
-              maxWidth: 590,
-            },
-          },
-          {
-            resolve: `gatsby-remark-responsive-iframe`,
-            options: {
-              wrapperStyle: `margin-bottom: 1.0725rem`,
-            },
-          },
-          `gatsby-remark-prismjs`,
-          `gatsby-remark-copy-linked-files`,
-          `gatsby-remark-smartypants`,
-        ],
+        resolve: `gatsby-remark-images-contentful`,
+        options: {
+          maxWidth: 380,
+        },
       },
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    `gatsby-plugin-feed`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `태훈노트`,
-        short_name: `태훈노트`,
         start_url: `/`,
         background_color: `#fff`,
         theme_color: `#fff`,
         display: `minimal-ui`,
-        icon: `src/assets/favicon.png`, // This path is relative to the root of the site.
+        icon: `src/assets/favicon.png`,
       },
     },
     `gatsby-plugin-sass`,
@@ -67,6 +38,13 @@ module.exports = {
       resolve: `gatsby-plugin-typography`,
       options: {
         pathToConfigModule: `src/utils/typography`,
+      },
+    },
+    {
+      resolve: `gatsby-source-contentful`,
+      options: {
+        spaceId: process.env.CONTENTFUL_SPACE_ID,
+        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
       },
     },
   ],

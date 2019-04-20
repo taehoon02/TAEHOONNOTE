@@ -1,26 +1,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link, graphql } from 'gatsby';
+import { graphql } from 'gatsby';
 
 import Layout from '../components/Layout';
 import SEO from '../components/seo';
 import { rhythm, scale } from '../utils/typography';
 
-class BlogPostTemplate extends React.Component {
+class Post extends React.Component {
   render() {
     const { data } = this.props;
-    const post = data.markdownRemark;
+    const post = data.contentfulBasic;
     const siteTitle = data.site.siteMetadata.title;
-    const { previous, next } = data.pageContext;
-    const { location } = data.location;
+    // const previous = data.;
+    // const next = data.
+    // const { location } = data.location;
 
     return (
-      <Layout location={location} title={siteTitle}>
-        <SEO
-          title={post.frontmatter.title}
-          description={post.frontmatter.description || post.excerpt}
-        />
-        <h1>{post.frontmatter.title}</h1>
+      <Layout title={siteTitle}>
+        <SEO title={post.title} />
+        <h1>{post.title}</h1>
         <p
           style={{
             ...scale(-1 / 5),
@@ -29,20 +27,54 @@ class BlogPostTemplate extends React.Component {
             marginTop: rhythm(-1),
           }}
         >
-          {post.frontmatter.date}
+          {post.date}
           <br />
-          {post.frontmatter.category}
+          {post.categories.join(`, `)}
           <br />
-          {post.frontmatter.tags}
+          {post.readtime}
         </p>
-        <div dangerouslySetInnerHTML={{ __html: post.html }} />
+        <p
+          dangerouslySetInnerHTML={{
+            __html: post.introductory.childMarkdownRemark.html,
+          }}
+        />
+        <p
+          dangerouslySetInnerHTML={{
+            __html: post.point1.childMarkdownRemark.html,
+          }}
+        />
+        <p
+          dangerouslySetInnerHTML={{
+            __html: post.point2.childMarkdownRemark.html,
+          }}
+        />
+        <p
+          dangerouslySetInnerHTML={{
+            __html: post.point3.childMarkdownRemark.html,
+          }}
+        />
+        <p
+          dangerouslySetInnerHTML={{
+            __html: post.point4.childMarkdownRemark.html,
+          }}
+        />
+        <p
+          dangerouslySetInnerHTML={{
+            __html: post.point5.childMarkdownRemark.html,
+          }}
+        />
+        <p
+          dangerouslySetInnerHTML={{
+            __html: post.finish.childMarkdownRemark.html,
+          }}
+        />
         <hr
           style={{
             marginBottom: rhythm(1),
           }}
         />
 
-        <ul
+        {/* <ul
           style={{
             display: `flex`,
             flexWrap: `wrap`,
@@ -65,34 +97,69 @@ class BlogPostTemplate extends React.Component {
               </Link>
             )}
           </li>
-        </ul>
+        </ul> */}
       </Layout>
     );
   }
 }
 
-BlogPostTemplate.propTypes = {
+Post.propTypes = {
   data: PropTypes,
 };
 
-export default BlogPostTemplate;
+export default Post;
 
 export const pageQuery = graphql`
-  query BlogPostBySlug($slug: String!) {
+  query PostQuery($slug: String!) {
     site {
       siteMetadata {
         title
-        author
       }
     }
-    markdownRemark(fields: { slug: { eq: $slug } }) {
-      id
-      excerpt(pruneLength: 250)
-      html
-      frontmatter {
-        title
-        date(formatString: "YYYY년 MM월 DD일")
-        category
+    contentfulBasic(slug: { eq: $slug }) {
+      thumbnail {
+        file {
+          url
+        }
+      }
+      title
+      date(formatString: "YYYY년 M월 D일")
+      readtime
+      categories
+      introductory {
+        childMarkdownRemark {
+          html
+        }
+      }
+      point1 {
+        childMarkdownRemark {
+          html
+        }
+      }
+      point2 {
+        childMarkdownRemark {
+          html
+        }
+      }
+      point3 {
+        childMarkdownRemark {
+          html
+        }
+      }
+      point4 {
+        childMarkdownRemark {
+          html
+        }
+      }
+      point5 {
+        childMarkdownRemark {
+          html
+        }
+      }
+      finish {
+        childMarkdownRemark {
+          html
+        }
       }
     }
   }

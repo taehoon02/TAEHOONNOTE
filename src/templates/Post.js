@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link, graphql } from 'gatsby';
 
 import Layout from '../components/Layout';
@@ -7,12 +8,14 @@ import { rhythm, scale } from '../utils/typography';
 
 class BlogPostTemplate extends React.Component {
   render() {
-    const post = this.props.data.markdownRemark;
-    const siteTitle = this.props.data.site.siteMetadata.title;
-    const { previous, next } = this.props.pageContext;
+    const { data } = this.props;
+    const post = data.markdownRemark;
+    const siteTitle = data.site.siteMetadata.title;
+    const { previous, next } = data.pageContext;
+    const { location } = data.location;
 
     return (
-      <Layout location={this.props.location} title={siteTitle}>
+      <Layout location={location} title={siteTitle}>
         <SEO
           title={post.frontmatter.title}
           description={post.frontmatter.description || post.excerpt}
@@ -68,6 +71,10 @@ class BlogPostTemplate extends React.Component {
   }
 }
 
+BlogPostTemplate.propTypes = {
+  data: PropTypes,
+};
+
 export default BlogPostTemplate;
 
 export const pageQuery = graphql`
@@ -80,11 +87,11 @@ export const pageQuery = graphql`
     }
     markdownRemark(fields: { slug: { eq: $slug } }) {
       id
-      excerpt(pruneLength: 160)
+      excerpt(pruneLength: 250)
       html
       frontmatter {
         title
-        date(formatString: "YYYY년 MM원 DD일")
+        date(formatString: "YYYY년 MM월 DD일")
         category
       }
     }

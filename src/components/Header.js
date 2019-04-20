@@ -61,7 +61,6 @@ const SocialText = styled.div`
 `;
 
 const TitleWrapper = styled.div`
-  font-family: 'NotoSansKR', sans-serif;
   font-size: 3rem;
   font-weight: 700;
   letter-spacing: -0.1rem;

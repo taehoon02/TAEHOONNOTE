@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import Header from './Header';
 import Navbar from './Navbar';
@@ -26,5 +27,9 @@ class Layout extends React.Component {
     );
   }
 }
+
+Layout.propTypes = {
+  children: PropTypes,
+};
 
 export default Layout;

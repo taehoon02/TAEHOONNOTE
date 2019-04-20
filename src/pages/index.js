@@ -1,37 +1,31 @@
 import React from 'react';
-import { Link, graphql } from 'gatsby';
+import PropTypes from 'prop-types';
+import { graphql } from 'gatsby';
 
 import Layout from '../components/Layout';
 import SEO from '../components/seo';
-import { rhythm } from '../utils/typography';
 
-class BlogIndex extends React.Component {
+import PostCard from '../components/PostCard';
+
+class Index extends React.Component {
   render() {
     const { data } = this.props;
     const siteTitle = data.site.siteMetadata.title;
     const posts = data.allMarkdownRemark.edges;
 
     return (
-      <Layout location={this.props.location} title={siteTitle}>
+      <Layout title={siteTitle}>
         <SEO keywords={[`blog`, `taehoon`, `note`]} />
         {posts.map(({ node }) => {
-          const title = node.frontmatter.title || node.fields.slug;
           return (
-            <div key={node.fields.slug}>
-              <h3
-                style={{
-                  marginBottom: rhythm(1 / 4),
-                }}
-              >
-                <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
-                  {title}
-                </Link>
-              </h3>
-              <small>{node.frontmatter.date}</small>
-              <p
-                dangerouslySetInnerHTML={{
-                  __html: node.frontmatter.description || node.excerpt,
-                }}
+            <div>
+              <PostCard
+                thumbnail={node.frontmatter.featuredImage}
+                category={node.frontmatter.category}
+                link={node.fields.slug}
+                title={node.frontmatter.title}
+                date={node.frontmatter.date}
+                excerpt={node.excerpt}
               />
             </div>
           );
@@ -41,7 +35,11 @@ class BlogIndex extends React.Component {
   }
 }
 
-export default BlogIndex;
+Index.propTypes = {
+  data: PropTypes,
+};
+
+export default Index;
 
 export const pageQuery = graphql`
   query {
@@ -53,13 +51,14 @@ export const pageQuery = graphql`
     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
       edges {
         node {
-          excerpt
+          excerpt(pruneLength: 250)
           fields {
             slug
           }
           frontmatter {
             title
-            date(formatString: "YYYY년 MM원 DD일")
+            date(formatString: "YYYY년 M월 DD일")
+            category
           }
         }
       }

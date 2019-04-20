@@ -26,7 +26,7 @@ const Media = styled.img`
   display: block;
   overflow: hidden;
   width: 380px;
-  height: 100%;
+  height: 328px;
   margin-top: -1px;
   background-position: center center;
   background-size: cover;
@@ -89,7 +89,15 @@ const ContentExcerpt = styled.div`
 
 class PostCard extends React.Component {
   render() {
-    const { category, thumbnail, link, title, date, excerpt } = this.props;
+    const {
+      category,
+      thumbnail,
+      link,
+      title,
+      date,
+      readtime,
+      excerpt,
+    } = this.props;
     return (
       <Wrapper>
         <MediaWrapper>
@@ -99,7 +107,9 @@ class PostCard extends React.Component {
           <ContentHeaderWrapper>
             <ContentHeaderCategory>{category.join(`, `)}</ContentHeaderCategory>
             <ContentHeaderTitle to={link}>{title}</ContentHeaderTitle>
-            <ContentHeaderDate>{date}</ContentHeaderDate>
+            <ContentHeaderDate>
+              {date} ∙ {readtime}분 읽기
+            </ContentHeaderDate>
           </ContentHeaderWrapper>
           <ContentExcerpt>{excerpt}</ContentExcerpt>
         </ContentWrapper>
@@ -114,6 +124,7 @@ PostCard.propTypes = {
   link: PropTypes.string,
   title: PropTypes.string,
   date: PropTypes.string,
+  readtime: PropTypes.string,
   excerpt: PropTypes.string,
 };
 

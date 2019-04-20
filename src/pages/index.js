@@ -11,7 +11,7 @@ class Index extends React.Component {
   render() {
     const { data } = this.props;
     const siteTitle = data.site.siteMetadata.title;
-    const posts = data.allMarkdownRemark.edges;
+    const posts = data.allContentfulBasic.edges;
 
     return (
       <Layout title={siteTitle}>
@@ -20,12 +20,13 @@ class Index extends React.Component {
           return (
             <div>
               <PostCard
-                thumbnail={node.frontmatter.featuredImage}
-                category={node.frontmatter.category}
-                link={node.fields.slug}
-                title={node.frontmatter.title}
-                date={node.frontmatter.date}
-                excerpt={node.excerpt}
+                thumbnail={node.thumbnail.file.url}
+                category={node.categories}
+                link={node.slug}
+                title={node.title}
+                date={node.date}
+                readtime={node.readtime}
+                excerpt={node.introductory.childMarkdownRemark.excerpt}
               />
             </div>
           );
@@ -42,23 +43,29 @@ Index.propTypes = {
 export default Index;
 
 export const pageQuery = graphql`
-  query {
+  query IndexQuery {
     site {
       siteMetadata {
         title
       }
     }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+    allContentfulBasic(sort: { fields: [date], order: DESC }) {
       edges {
         node {
-          excerpt(pruneLength: 250)
-          fields {
-            slug
+          thumbnail {
+            file {
+              url
+            }
           }
-          frontmatter {
-            title
-            date(formatString: "YYYY년 M월 DD일")
-            category
+          title
+          slug
+          date(formatString: "YYYY년 M월 D일")
+          readtime
+          categories
+          introductory {
+            childMarkdownRemark {
+              excerpt
+            }
           }
         }
       }

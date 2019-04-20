@@ -84,7 +84,7 @@ SEO.defaultProps = {
   lang: `ko`,
   meta: [],
   keywords: [],
-  description: `평범한 10대가 내 이야기를 씁니다.`,
+  description: `평범한 10대가 이야기를 씁니다.`,
 };
 
 SEO.propTypes = {

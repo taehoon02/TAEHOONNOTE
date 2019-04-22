@@ -5,6 +5,8 @@ import Header from './Header';
 import Navbar from './Navbar';
 import Footer from './Footer';
 
+import Instagram from './Instagram';
+
 class Layout extends React.Component {
   render() {
     const { children } = this.props;
@@ -18,6 +20,7 @@ class Layout extends React.Component {
         <br />
         <br />
         <main>{children}</main>
+        <Instagram />
         <br />
         <br />
         <br />

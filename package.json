@@ -8,6 +8,7 @@
     "@fortawesome/fontawesome-free": "^5.8.1",
     "axios": "^0.18.0",
     "dotenv": "^7.0.0",
+    "fs": "^0.0.1-security",
     "gatsby": "^2.3.25",
     "gatsby-image": "^2.0.39",
     "gatsby-plugin-manifest": "^2.0.29",

@@ -72,7 +72,7 @@ const ContentHeaderTitle = styled(Link)`
   }
 `;
 
-const ContentHeaderDate = styled(Link)`
+const ContentHeaderMeta = styled(Link)`
   margin-top: 1rem;
   box-shadow: none;
   color: #0a0a0a;
@@ -118,9 +118,9 @@ class PostCard extends React.Component {
           <ContentHeaderWrapper>
             <ContentHeaderCategory>{category.join(`, `)}</ContentHeaderCategory>
             <ContentHeaderTitle to={link}>{title}</ContentHeaderTitle>
-            <ContentHeaderDate to={link}>
+            <ContentHeaderMeta to={link}>
               {date} ∙ {readtime}분 읽기
-            </ContentHeaderDate>
+            </ContentHeaderMeta>
           </ContentHeaderWrapper>
           <ContentExcerpt>{excerpt}</ContentExcerpt>
         </ContentWrapper>

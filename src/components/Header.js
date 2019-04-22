@@ -128,7 +128,9 @@ class Header extends React.Component {
   componentDidMount() {
     axios
       .get(
-        `https://api.instagram.com/v1/users/self/?access_token=6861791951.1677ed0.394eae8c653c41b7a34afffb65400c19`,
+        `https://api.instagram.com/v1/users/self/?access_token=${
+          process.env.INSTAGRAM_ACCESS_TOKEN
+        }`,
       )
       .then(res => {
         const num = numeral(res.data.data.counts.followed_by).format('0a');
@@ -149,7 +151,7 @@ class Header extends React.Component {
           <SocialWrapper>
             <SocialLink
               instagram
-              href="https://instagram.com/jaytaehoon_"
+              href="https://instagram.com/taehoon_note_"
               target="_blank"
             >
               <i className="fab fa-instagram" />

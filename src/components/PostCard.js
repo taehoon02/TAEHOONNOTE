@@ -65,16 +65,27 @@ const ContentHeaderTitle = styled(Link)`
   font-weight: 700;
   letter-spacing: -0.05em;
   text-transform: none;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: #f73832;
+  }
 `;
 
-const ContentHeaderDate = styled.span`
+const ContentHeaderDate = styled(Link)`
   margin-top: 1rem;
+  box-shadow: none;
   color: #0a0a0a;
   font-family: 'Poppins', sans-serif;
   font-size: 10px;
   font-weight: 400;
   letter-spacing: 1px;
   text-transform: uppercase;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: #f73832;
+  }
 `;
 
 const ContentExcerpt = styled.div`
@@ -107,7 +118,7 @@ class PostCard extends React.Component {
           <ContentHeaderWrapper>
             <ContentHeaderCategory>{category.join(`, `)}</ContentHeaderCategory>
             <ContentHeaderTitle to={link}>{title}</ContentHeaderTitle>
-            <ContentHeaderDate>
+            <ContentHeaderDate to={link}>
               {date} ∙ {readtime}분 읽기
             </ContentHeaderDate>
           </ContentHeaderWrapper>

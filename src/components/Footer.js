@@ -57,14 +57,14 @@ const CopyrightText = styled.span`
 
 const Footer = () => (
   <Container>
-    <Section>
+    {/* <Section>
       <Subcribe>
         <SubcribeTitle>태훈노트 뉴스레터를 구독해보세요!</SubcribeTitle>
         <SubcribeMessage>
           매주 토요일! 0명이 메일로 받아 보는 뉴스레터
         </SubcribeMessage>
       </Subcribe>
-    </Section>
+    </Section> */}
     <Section>
       <Copyright>
         <CopyrightText>

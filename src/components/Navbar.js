@@ -20,6 +20,8 @@ const Section = styled.div`
 `;
 
 const MenuWrapper = styled.ul`
+  display: flex;
+  flex-direction: row;
   flex-grow: 0;
 `;
 
@@ -61,6 +63,10 @@ const Navbar = () => (
     <Section>
       <MenuWrapper>
         <Menu to="/about">ABOUT</Menu>
+        <Menu to="/category/essay">ESSAY</Menu>
+        <Menu to="/category/develop">DEVELOP</Menu>
+        <Menu to="/category/movie">MOVIE</Menu>
+        <Menu to="/category/book">BOOK</Menu>
         <Menu to="/subscription">SUBSCRIPTION</Menu>
         <Menu to="/contact">CONTACT</Menu>
       </MenuWrapper>

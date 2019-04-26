@@ -31,7 +31,7 @@ const SocialLink = styled.a`
   width: 32px;
   box-shadow: none;
   color: #0a0a0a;
-  font-family: sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
   text-align: center;
   transition: color 0.2s ease;
 
@@ -53,7 +53,7 @@ const SocialLink = styled.a`
 const SocialText = styled.div`
   margin-top: 8px;
   color: #0a0a0a;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins', Helvetica, Arial, sans-serif;
   font-size: 10px;
   font-weight: 400;
   letter-spacing: 1;
@@ -111,7 +111,7 @@ const SubscribeText = styled.span`
   width: 85px;
   height: 24px;
   color: #fff;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins', Helvetica, Arial, sans-serif;
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 2px;

@@ -12,7 +12,7 @@ const Wrapper = styled.div`
 const Title = styled.div`
   margin-bottom: 2rem;
   color: #f73832;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins', Helvetica, Arial, sans-serif;
   font-size: 1.25rem;
   font-weight: 600;
   text-transform: none;
@@ -49,7 +49,7 @@ const Username = styled.a`
   margin-top: 1rem;
   box-shadow: none;
   color: #000;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins', Helvetica, Arial, sans-serif;
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 2px;
@@ -65,7 +65,7 @@ const Fullname = styled.a`
   margin-top: 1rem;
   box-shadow: none;
   color: #000;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins', Helvetica, Arial, sans-serif;
   font-size: 10px;
   font-weight: 400;
   letter-spacing: 1px;
@@ -86,7 +86,7 @@ const CounterWrapper = styled.div`
 `;
 
 const Counter = styled.div`
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins', Helvetica, Arial, sans-serif;
   font-size: 10px;
   font-weight: 400;
   letter-spacing: 1px;
@@ -152,7 +152,7 @@ const FollowButton = styled.a`
 
 const FollowText = styled.span`
   color: #fff;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins', Helvetica, Arial, sans-serif;
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 2px;

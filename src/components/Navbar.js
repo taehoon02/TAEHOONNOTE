@@ -32,7 +32,7 @@ const Menu = styled(Link)`
   margin-left: 2rem;
   box-shadow: none;
   color: #0a0a0a;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins', Helvetica, Arial, sans-serif;
   font-size: 14px;
   font-weight: 600;
   letter-spacing: 0;
@@ -52,7 +52,6 @@ const SearchIcon = styled.a`
   margin-left: auto;
   box-shadow: none;
   color: #000;
-  font-family: 'NotoSansKR', sans-serif;
   font-size: 17.5px;
   letter-spacing: 0.05px;
 `;

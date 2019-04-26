@@ -1,5 +1,6 @@
 import 'typeface-poppins';
 import 'typeface-notosans-kor';
+import 'typeface-noto-sans';
 
 import '@fortawesome/fontawesome-free/css/fontawesome.css';
 import '@fortawesome/fontawesome-free/css/all.css';

@@ -5,7 +5,6 @@ const Container = styled.div`
   display: block;
   background-color: #f7f7f7;
   color: #727272;
-  font-family: 'NotoSansKR', sans-serif;
   font-size: 17.5px;
   font-weight: 400;
   text-transform: none;

@@ -51,7 +51,7 @@ const ContentHeaderCategory = styled.a`
   margin-bottom: 1rem;
   box-shadow: none;
   color: #f73832;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins', Helvetica, Arial, sans-serif;
   font-size: 10px;
   font-weight: 400;
   letter-spacing: 1px;
@@ -76,7 +76,7 @@ const ContentHeaderMeta = styled(Link)`
   margin-top: 1rem;
   box-shadow: none;
   color: #0a0a0a;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins', Helvetica, Arial, sans-serif;
   font-size: 10px;
   font-weight: 400;
   letter-spacing: 1px;
@@ -98,36 +98,33 @@ const ContentExcerpt = styled.div`
   text-align: left;
 `;
 
-class PostCard extends React.Component {
-  render() {
-    const {
-      category,
-      thumbnail,
-      link,
-      title,
-      date,
-      readtime,
-      excerpt,
-    } = this.props;
-    return (
-      <Wrapper>
-        <MediaWrapper>
-          <Media src={thumbnail} />
-        </MediaWrapper>
-        <ContentWrapper>
-          <ContentHeaderWrapper>
-            <ContentHeaderCategory>{category.join(`, `)}</ContentHeaderCategory>
-            <ContentHeaderTitle to={link}>{title}</ContentHeaderTitle>
-            <ContentHeaderMeta to={link}>
-              {date} ∙ {readtime}분 읽기
-            </ContentHeaderMeta>
-          </ContentHeaderWrapper>
-          <ContentExcerpt>{excerpt}</ContentExcerpt>
-        </ContentWrapper>
-      </Wrapper>
-    );
-  }
-}
+const PostCard = ({
+  category,
+  thumbnail,
+  link,
+  title,
+  date,
+  readtime,
+  excerpt,
+}) => {
+  return (
+    <Wrapper>
+      <MediaWrapper>
+        <Media src={thumbnail} />
+      </MediaWrapper>
+      <ContentWrapper>
+        <ContentHeaderWrapper>
+          <ContentHeaderCategory>{category.join(`, `)}</ContentHeaderCategory>
+          <ContentHeaderTitle to={link}>{title}</ContentHeaderTitle>
+          <ContentHeaderMeta to={link}>
+            {date} ∙ {readtime}분 읽기
+          </ContentHeaderMeta>
+        </ContentHeaderWrapper>
+        <ContentExcerpt>{excerpt}</ContentExcerpt>
+      </ContentWrapper>
+    </Wrapper>
+  );
+};
 
 PostCard.propTypes = {
   category: PropTypes.arrayOf(PropTypes.string),

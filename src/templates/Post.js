@@ -6,75 +6,73 @@ import Layout from '../components/Layout';
 import SEO from '../components/seo';
 import { rhythm, scale } from '../utils/typography';
 
-class Post extends React.Component {
-  render() {
-    const { data } = this.props;
-    const post = data.contentfulBasic;
-    const siteTitle = data.site.siteMetadata.title;
-    // const previous = data.;
-    // const next = data.
-    // const { location } = data.location;
+const Post = ({ data }) => {
+  const post = data.contentfulBasic;
+  const siteTitle = data.site.siteMetadata.title;
+  // const previous = data.;
+  // const next = data.
+  // const { location } = data.location;
 
-    return (
-      <Layout title={siteTitle}>
-        <SEO title={post.title} />
-        <h1>{post.title}</h1>
-        <p
-          style={{
-            ...scale(-1 / 5),
-            display: `block`,
-            marginBottom: rhythm(1),
-            marginTop: rhythm(-1),
-          }}
-        >
-          {post.date}
-          <br />
-          {post.categories.join(`, `)}
-          <br />
-          {post.readtime}
-        </p>
-        <p
-          dangerouslySetInnerHTML={{
-            __html: post.introductory.childMarkdownRemark.html,
-          }}
-        />
-        <p
-          dangerouslySetInnerHTML={{
-            __html: post.point1.childMarkdownRemark.html,
-          }}
-        />
-        <p
-          dangerouslySetInnerHTML={{
-            __html: post.point2.childMarkdownRemark.html,
-          }}
-        />
-        <p
-          dangerouslySetInnerHTML={{
-            __html: post.point3.childMarkdownRemark.html,
-          }}
-        />
-        <p
-          dangerouslySetInnerHTML={{
-            __html: post.point4.childMarkdownRemark.html,
-          }}
-        />
-        <p
-          dangerouslySetInnerHTML={{
-            __html: post.point5.childMarkdownRemark.html,
-          }}
-        />
-        <p
-          dangerouslySetInnerHTML={{
-            __html: post.finish.childMarkdownRemark.html,
-          }}
-        />
-        <hr
-          style={{
-            marginBottom: rhythm(1),
-          }}
-        />
+  return (
+    <Layout title={siteTitle}>
+      <SEO title={post.title} />
+      <h1>{post.title}</h1>
+      <p
+        style={{
+          ...scale(-1 / 5),
+          display: `block`,
+          marginBottom: rhythm(1),
+          marginTop: rhythm(-1),
+        }}
+      >
+        {post.date}
+        <br />
+        {post.categories.join(`, `)}
+        <br />
+        {post.readtime}
+      </p>
+      <p
+        dangerouslySetInnerHTML={{
+          __html: post.introductory.childMarkdownRemark.html,
+        }}
+      />
+      <p
+        dangerouslySetInnerHTML={{
+          __html: post.point1.childMarkdownRemark.html,
+        }}
+      />
+      <p
+        dangerouslySetInnerHTML={{
+          __html: post.point2.childMarkdownRemark.html,
+        }}
+      />
+      <p
+        dangerouslySetInnerHTML={{
+          __html: post.point3.childMarkdownRemark.html,
+        }}
+      />
+      <p
+        dangerouslySetInnerHTML={{
+          __html: post.point4.childMarkdownRemark.html,
+        }}
+      />
+      <p
+        dangerouslySetInnerHTML={{
+          __html: post.point5.childMarkdownRemark.html,
+        }}
+      />
+      <p
+        dangerouslySetInnerHTML={{
+          __html: post.finish.childMarkdownRemark.html,
+        }}
+      />
+      <hr
+        style={{
+          marginBottom: rhythm(1),
+        }}
+      />
 
-        {/* <ul
+      {/* <ul
           style={{
             display: `flex`,
             flexWrap: `wrap`,
@@ -98,13 +96,12 @@ class Post extends React.Component {
             )}
           </li>
         </ul> */}
-      </Layout>
-    );
-  }
-}
+    </Layout>
+  );
+};
 
 Post.propTypes = {
-  data: PropTypes,
+  data: PropTypes.shape,
 };
 
 export default Post;

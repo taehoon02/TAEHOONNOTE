@@ -7,37 +7,34 @@ import SEO from '../components/seo';
 
 import PostCard from '../components/PostCard';
 
-class Index extends React.Component {
-  render() {
-    const { data } = this.props;
-    const siteTitle = data.site.siteMetadata.title;
-    const posts = data.allContentfulBasic.edges;
+const Index = ({ data }) => {
+  const siteTitle = data.site.siteMetadata.title;
+  const posts = data.allContentfulBasic.edges;
 
-    return (
-      <Layout title={siteTitle}>
-        <SEO keywords={[`blog`, `taehoon`, `note`]} />
-        {posts.map(({ node }) => {
-          return (
-            <div>
-              <PostCard
-                thumbnail={node.thumbnail.file.url}
-                category={node.categories}
-                link={node.slug}
-                title={node.title}
-                date={node.date}
-                readtime={node.readtime}
-                excerpt={node.introductory.childMarkdownRemark.excerpt}
-              />
-            </div>
-          );
-        })}
-      </Layout>
-    );
-  }
-}
+  return (
+    <Layout title={siteTitle}>
+      <SEO keywords={[`blog`, `taehoon`, `note`]} />
+      {posts.map(({ node }) => {
+        return (
+          <div>
+            <PostCard
+              thumbnail={node.thumbnail.file.url}
+              category={node.categories}
+              link={node.slug}
+              title={node.title}
+              date={node.date}
+              readtime={node.readtime}
+              excerpt={node.introductory.childMarkdownRemark.excerpt}
+            />
+          </div>
+        );
+      })}
+    </Layout>
+  );
+};
 
 Index.propTypes = {
-  data: PropTypes,
+  data: PropTypes.shape,
 };
 
 export default Index;

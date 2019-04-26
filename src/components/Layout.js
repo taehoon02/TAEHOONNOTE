@@ -32,7 +32,7 @@ class Layout extends React.Component {
 }
 
 Layout.propTypes = {
-  children: PropTypes,
+  children: PropTypes.shape,
 };
 
 export default Layout;

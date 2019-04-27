@@ -50,7 +50,7 @@ const ContentHeaderCategory = styled.a`
   display: inline-block;
   margin-bottom: 1rem;
   box-shadow: none;
-  color: #f73832;
+  color: #3266d6;
   font-family: 'Poppins', Helvetica, Arial, sans-serif;
   font-size: 10px;
   font-weight: 400;
@@ -68,7 +68,7 @@ const ContentHeaderTitle = styled(Link)`
   transition: color 0.2s ease;
 
   &:hover {
-    color: #f73832;
+    color: #3266d6;
   }
 `;
 
@@ -84,7 +84,7 @@ const ContentHeaderMeta = styled(Link)`
   transition: color 0.2s ease;
 
   &:hover {
-    color: #f73832;
+    color: #3266d6;
   }
 `;
 

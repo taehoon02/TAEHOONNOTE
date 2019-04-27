@@ -44,7 +44,7 @@ const Menu = styled(Link)`
   }
 
   &:hover {
-    color: #f73832;
+    color: #3266d6;
   }
 `;
 

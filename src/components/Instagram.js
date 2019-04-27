@@ -11,7 +11,7 @@ const Wrapper = styled.div`
 
 const Title = styled.div`
   margin-bottom: 2rem;
-  color: #f73832;
+  color: #3266d6;
   font-family: 'Poppins', Helvetica, Arial, sans-serif;
   font-size: 1.25rem;
   font-weight: 600;
@@ -140,7 +140,7 @@ const FooterWrapper = styled.div`
 const FollowButton = styled.a`
   width: auto;
   padding: 0.5rem 1rem;
-  background-color: #f73832;
+  background-color: #3266d6;
   border-radius: 100px;
   box-shadow: none;
   transition: all 0.2s ease;

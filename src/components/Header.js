@@ -96,7 +96,7 @@ const SubscribeWrapper = styled.div`
 const SubscribeButton = styled(Link)`
   padding: 6px 16px;
   border: 1px;
-  background-color: #f73832;
+  background-color: #3266d6;
   box-shadow: none;
   cursor: pointer;
   transition: all 0.2s ease;

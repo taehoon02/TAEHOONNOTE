@@ -7,10 +7,10 @@ const Wrapper = styled.div`
   display: flex;
   max-width: 800px;
   max-height: 328px;
-  margin-right: -20px;
-  margin-left: -20px;
   border-top: 1px #e9ecef solid;
   border-bottom: 1px #e9ecef solid;
+  margin-right: -20px;
+  margin-left: -20px;
   font-size: 4rem;
 `;
 

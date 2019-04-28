@@ -107,6 +107,8 @@ const SubscribeButton = styled(Link)`
 `;
 
 const SubscribeText = styled.span`
+  position: relative;
+  top: 1px;
   display: block;
   width: 85px;
   height: 24px;

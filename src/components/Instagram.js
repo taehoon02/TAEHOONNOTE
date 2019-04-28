@@ -6,7 +6,6 @@ import numeral from 'numeral';
 const Wrapper = styled.div`
   max-width: 300px;
   max-height: 740px;
-  margin-top: 4rem;
 `;
 
 const Title = styled.div`
@@ -57,7 +56,7 @@ const Username = styled.a`
   transition: color 0.2s ease;
 
   &:hover {
-    color: #f7384d;
+    color: #3266d6;
   }
 `;
 
@@ -74,7 +73,7 @@ const Fullname = styled.a`
   word-break: break-all;
 
   &:hover {
-    color: #f7384d;
+    color: #3266d6;
   }
 `;
 
@@ -128,7 +127,51 @@ const ItemImg = styled.img`
   height: 100%;
   backface-visibility: hidden;
   object-fit: cover;
+  pointer-events: none;
   transition: 0.25s;
+  user-select: none;
+`;
+
+const ItemMeta = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.9);
+  opacity: 0;
+  transition: 0.25s;
+
+  &:hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(40, 40, 40, 0.125);
+    content: '';
+    opacity: 1;
+  }
+`;
+
+const ItemMetaLikes = styled.div`
+  display: flex;
+  align-items: baseline;
+  margin: 0;
+  font-family: 'Poppins', Helvetica, Arial, sans-serif;
+  font-size: 12px;
+`;
+
+const ItemMetaIcon = styled.i`
+  top: 1px;
+  margin-right: 5px;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1;
+  text-transform: none;
 `;
 
 const FooterWrapper = styled.div`
@@ -143,9 +186,9 @@ const FollowButton = styled.a`
   background-color: #3266d6;
   border-radius: 100px;
   box-shadow: none;
-  transition: all 0.2s ease;
+  transition: all 0.25s ease;
 
-  :hover {
+  &:hover {
     background-color: #000;
   }
 `;
@@ -242,6 +285,12 @@ class Instagram extends React.Component {
                 <Item>
                   <ItemLink href={data.link} target="_blank">
                     <ItemImg src={data.images.thumbnail.url} />
+                    <ItemMeta>
+                      <ItemMetaLikes>
+                        <ItemMetaIcon className="far fa-heart" />
+                        &nbsp;{data.likes.count}
+                      </ItemMetaLikes>
+                    </ItemMeta>
                   </ItemLink>
                 </Item>
               );

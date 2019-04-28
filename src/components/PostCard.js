@@ -51,7 +51,7 @@ const ContentHeaderCategory = styled.a`
   margin-bottom: 1rem;
   box-shadow: none;
   color: #3266d6;
-  font-family: 'Poppins', Helvetica, Arial, sans-serif;
+  font-family: 'Poppins', Arial, Helvetica, sans-serif;
   font-size: 10px;
   font-weight: 400;
   letter-spacing: 1px;
@@ -61,6 +61,7 @@ const ContentHeaderCategory = styled.a`
 const ContentHeaderTitle = styled(Link)`
   box-shadow: none;
   color: #0a0a0a;
+  font-family: 'Noto Sans', Arial, Helvetica, sans-serif;
   font-size: 1.25rem;
   font-weight: 700;
   letter-spacing: -0.05em;
@@ -76,7 +77,7 @@ const ContentHeaderMeta = styled(Link)`
   margin-top: 1rem;
   box-shadow: none;
   color: #0a0a0a;
-  font-family: 'Poppins', Helvetica, Arial, sans-serif;
+  font-family: 'Poppins', Arial, Helvetica, sans-serif;
   font-size: 10px;
   font-weight: 400;
   letter-spacing: 1px;
@@ -91,6 +92,7 @@ const ContentHeaderMeta = styled(Link)`
 const ContentExcerpt = styled.div`
   display: block;
   margin-bottom: 1.5rem;
+  font-family: 'Noto Sans KR', Arial, Helvetica, sans-serif;
   font-size: 0.9rem;
   font-weight: 400;
   letter-spacing: 0.05px;

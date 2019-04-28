@@ -15,7 +15,7 @@ const HeaderWrapper = styled.div`
 const Title = styled.div`
   margin-top: 0;
   margin-bottom: 1rem;
-  font-family: 'Noto Sans', Helvetica, Arial, sans-serif;
+  font-family: 'Noto Sans', Arial, Helvetica, sans-serif;
   font-size: 3rem;
   font-weight: 700;
   letter-spacing: -0.05em;
@@ -25,7 +25,7 @@ const Title = styled.div`
 
 const PostCount = styled.div`
   margin-top: 1rem;
-  font-family: Poppins, Helvetica, Arial, sans-serif;
+  font-family: 'Poppins', Arial, Helvetica, sans-serif;
   font-size: 10px;
   font-weight: 400;
   letter-spacing: 1px;

@@ -32,7 +32,7 @@ const Menu = styled(Link)`
   margin-left: 2rem;
   box-shadow: none;
   color: #0a0a0a;
-  font-family: 'Poppins', Helvetica, Arial, sans-serif;
+  font-family: 'Poppins', Arial, Helvetica, sans-serif;
   font-size: 14px;
   font-weight: 600;
   letter-spacing: 0;

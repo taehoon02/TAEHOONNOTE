@@ -4,8 +4,6 @@ import { graphql } from 'gatsby';
 import styled from 'styled-components';
 
 import Layout from '../components/Layout';
-import SEO from '../components/seo';
-
 import PostCard from '../components/PostCard';
 
 const HeaderWrapper = styled.div`
@@ -42,10 +40,11 @@ const Category = ({ data }) => {
 
   return (
     <Layout>
-      <SEO title="category" />
       <div>
         <HeaderWrapper>
-          <Title>DEVELOP</Title>
+          {edges.slice(0, 1).map(({ node }) => {
+            return <Title>{node.categories}</Title>;
+          })}
           <PostCount>{totalCount} POSTS</PostCount>
         </HeaderWrapper>
         <PostWrapper>
@@ -95,11 +94,6 @@ export default Category;
 
 export const pageQuery = graphql`
   query CategoryQuery($category: String) {
-    site {
-      siteMetadata {
-        title
-      }
-    }
     allContentfulBasic(
       sort: { fields: [date], order: DESC }
       filter: { categories: { in: [$category] } }

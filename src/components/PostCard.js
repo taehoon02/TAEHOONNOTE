@@ -1,13 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
+
 import styled from 'styled-components';
+import _ from 'lodash';
 
 const Wrapper = styled.div`
   display: flex;
-  max-width: 800px;
-  max-height: 328px;
-  border-top: 1px #e9ecef solid;
   border-bottom: 1px #e9ecef solid;
   margin-right: -20px;
   margin-left: -20px;
@@ -17,27 +16,75 @@ const Wrapper = styled.div`
 const MediaWrapper = styled.div`
   position: relative;
   flex: 0 0 50%;
-  padding-right: 20px;
-  padding-left: 20px;
+  padding-right: 40px;
+  user-select: none;
 `;
 
-const Media = styled.img`
+const MediaLink = styled(Link)`
+  position: relative;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: block;
+  box-shadow: none;
+  cursor: pointer;
+`;
+
+const MediaImg = styled.img`
   position: relative;
   display: block;
   overflow: hidden;
   width: 380px;
-  height: 328px;
+  height: 357px;
   margin-top: -1px;
-  background-position: center center;
+  background-position: center;
   background-size: cover;
   text-align: center;
+`;
+
+const MediaMeta = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex: 0 0 50%;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.9);
+  opacity: 0;
+  transition: all 0.25s ease;
+
+  &:hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(40, 40, 40, 0.125);
+    content: '';
+    opacity: 1;
+  }
+`;
+
+const MediaDescription = styled.div`
+  display: flex;
+  align-items: baseline;
+  margin: 0;
+  font-family: 'Poppins', Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
 `;
 
 const ContentWrapper = styled.div`
   padding-top: 30px;
   padding-right: 20px;
   padding-bottom: 30px;
-  padding-left: 20px;
 `;
 
 const ContentHeaderWrapper = styled.div`
@@ -46,7 +93,7 @@ const ContentHeaderWrapper = styled.div`
   margin-bottom: 1rem;
 `;
 
-const ContentHeaderCategory = styled.a`
+const ContentHeaderCategory = styled(Link)`
   display: inline-block;
   margin-bottom: 1rem;
   box-shadow: none;
@@ -112,11 +159,18 @@ const PostCard = ({
   return (
     <Wrapper>
       <MediaWrapper>
-        <Media src={thumbnail} />
+        <MediaLink to={link}>
+          <MediaImg src={thumbnail} />
+          <MediaMeta>
+            <MediaDescription>VIEW POST →</MediaDescription>
+          </MediaMeta>
+        </MediaLink>
       </MediaWrapper>
       <ContentWrapper>
         <ContentHeaderWrapper>
-          <ContentHeaderCategory>{category.join(`, `)}</ContentHeaderCategory>
+          <ContentHeaderCategory to={`/category/${_.kebabCase(category)}`}>
+            {category}
+          </ContentHeaderCategory>
           <ContentHeaderTitle to={link}>{title}</ContentHeaderTitle>
           <ContentHeaderMeta to={link}>
             {date} ∙ {readtime}분 읽기

@@ -33,37 +33,7 @@ const Post = ({ data }) => {
       </p>
       <p
         dangerouslySetInnerHTML={{
-          __html: post.introductory.childMarkdownRemark.html,
-        }}
-      />
-      <p
-        dangerouslySetInnerHTML={{
-          __html: post.point1.childMarkdownRemark.html,
-        }}
-      />
-      <p
-        dangerouslySetInnerHTML={{
-          __html: post.point2.childMarkdownRemark.html,
-        }}
-      />
-      <p
-        dangerouslySetInnerHTML={{
-          __html: post.point3.childMarkdownRemark.html,
-        }}
-      />
-      <p
-        dangerouslySetInnerHTML={{
-          __html: post.point4.childMarkdownRemark.html,
-        }}
-      />
-      <p
-        dangerouslySetInnerHTML={{
-          __html: post.point5.childMarkdownRemark.html,
-        }}
-      />
-      <p
-        dangerouslySetInnerHTML={{
-          __html: post.finish.childMarkdownRemark.html,
+          __html: post.content.childMarkdownRemark.html,
         }}
       />
       <hr
@@ -123,37 +93,7 @@ export const pageQuery = graphql`
       date(formatString: "YYYY년 M월 D일")
       readtime
       categories
-      introductory {
-        childMarkdownRemark {
-          html
-        }
-      }
-      point1 {
-        childMarkdownRemark {
-          html
-        }
-      }
-      point2 {
-        childMarkdownRemark {
-          html
-        }
-      }
-      point3 {
-        childMarkdownRemark {
-          html
-        }
-      }
-      point4 {
-        childMarkdownRemark {
-          html
-        }
-      }
-      point5 {
-        childMarkdownRemark {
-          html
-        }
-      }
-      finish {
+      content {
         childMarkdownRemark {
           html
         }

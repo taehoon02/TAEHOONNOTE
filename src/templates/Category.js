@@ -57,7 +57,7 @@ const Category = ({ data }) => {
                 title={node.title}
                 date={node.date}
                 readtime={node.readtime}
-                excerpt={node.introductory.childMarkdownRemark.excerpt}
+                excerpt={node.content.childMarkdownRemark.excerpt}
               />
             );
           })}
@@ -111,7 +111,7 @@ export const pageQuery = graphql`
           date(formatString: "YYYY년 M월 D일")
           readtime
           categories
-          introductory {
+          content {
             childMarkdownRemark {
               excerpt
             }

@@ -7,7 +7,7 @@
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.8.1",
     "axios": "^0.18.0",
-    "dotenv": "^7.0.0",
+    "dotenv": "^8.0.0",
     "gatsby": "^2.3.31",
     "gatsby-image": "^2.0.40",
     "gatsby-plugin-manifest": "^2.0.29",

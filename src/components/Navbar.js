@@ -66,7 +66,6 @@ const Navbar = () => (
         <Menu to="/category/develop">DEVELOP</Menu>
         <Menu to="/category/movie">MOVIE</Menu>
         <Menu to="/category/book">BOOK</Menu>
-        <Menu to="/subscription">SUBSCRIPTION</Menu>
         <Menu to="/contact">CONTACT</Menu>
       </MenuWrapper>
     </Section>

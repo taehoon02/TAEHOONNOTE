@@ -87,41 +87,6 @@ const Title = styled(Link)`
   }
 `;
 
-const SubscribeWrapper = styled.div`
-  display: flex;
-  margin-left: auto;
-  line-height: 1.85;
-  text-align: center;
-`;
-
-const SubscribeButton = styled(Link)`
-  padding: 6px 16px;
-  border: 1px;
-  background-color: #3266d6;
-  box-shadow: none;
-  cursor: pointer;
-  transition: all 0.2s ease;
-
-  :hover {
-    background-color: #000;
-  }
-`;
-
-const SubscribeText = styled.span`
-  position: relative;
-  top: 1px;
-  display: block;
-  width: 85px;
-  height: 24px;
-  color: #fff;
-  font-family: 'Poppins', Arial, Helvetica, sans-serif;
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 2px;
-  text-align: center;
-  text-transform: uppercase;
-`;
-
 class Header extends React.Component {
   state = {
     instagramFollowers: null,
@@ -175,13 +140,7 @@ class Header extends React.Component {
             <Title to="/">태훈노트</Title>
           </TitleWrapper>
         </Section>
-        <Section>
-          <SubscribeWrapper>
-            <SubscribeButton to="/subscription">
-              <SubscribeText>SUBSCRIBE</SubscribeText>
-            </SubscribeButton>
-          </SubscribeWrapper>
-        </Section>
+        <Section />
       </Container>
     );
   }

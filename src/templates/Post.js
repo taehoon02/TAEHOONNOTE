@@ -1,71 +1,40 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { graphql } from 'gatsby';
+import { Link, graphql } from 'gatsby';
 
+import _ from 'lodash';
 import Layout from '../components/Layout';
 import SEO from '../components/seo';
-import { rhythm, scale } from '../utils/typography';
+
+import '../scss/templates/post.scss';
 
 const Post = ({ data }) => {
   const post = data.contentfulBasic;
-  const siteTitle = data.site.siteMetadata.title;
-  // const previous = data.;
-  // const next = data.
-  // const { location } = data.location;
 
   return (
-    <Layout title={siteTitle}>
+    <Layout>
       <SEO title={post.title} />
-      <h1>{post.title}</h1>
-      <p
-        style={{
-          ...scale(-1 / 5),
-          display: `block`,
-          marginBottom: rhythm(1),
-          marginTop: rhythm(-1),
-        }}
-      >
-        {post.date}
-        <br />
-        {post.categories.join(`, `)}
-        <br />
-        {post.readtime}
-      </p>
-      <p
+      <header className="header">
+        <Link
+          to={`/category/${_.kebabCase(post.categories)}`}
+          className="meta-category"
+        >
+          {post.categories.join(`, `)}
+        </Link>
+        <h1 className="title">{post.title}</h1>
+        <span className="meta-post">
+          {post.date} ∙ {post.readtime}분 읽기
+        </span>
+      </header>
+      <section className="post-media">
+        <img src={post.thumbnail.file.url} alt="" />
+      </section>
+      <div
+        className="post-main"
         dangerouslySetInnerHTML={{
           __html: post.content.childMarkdownRemark.html,
         }}
       />
-      <hr
-        style={{
-          marginBottom: rhythm(1),
-        }}
-      />
-
-      {/* <ul
-          style={{
-            display: `flex`,
-            flexWrap: `wrap`,
-            justifyContent: `space-between`,
-            listStyle: `none`,
-            padding: 0,
-          }}
-        >
-          <li>
-            {previous && (
-              <Link to={previous.fields.slug} rel="prev">
-                ← {previous.frontmatter.title}
-              </Link>
-            )}
-          </li>
-          <li>
-            {next && (
-              <Link to={next.fields.slug} rel="next">
-                {next.frontmatter.title} →
-              </Link>
-            )}
-          </li>
-        </ul> */}
     </Layout>
   );
 };

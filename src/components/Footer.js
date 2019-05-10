@@ -19,28 +19,6 @@ const Section = styled.div`
   margin-left: auto;
 `;
 
-const Subcribe = styled.div`
-  display: flex;
-  flex-direction: column;
-  padding-top: 3rem;
-  padding-bottom: 3rem;
-  text-align: center;
-`;
-
-const SubcribeTitle = styled.span`
-  margin-bottom: 1rem;
-  color: #0a0a0a;
-  font-size: 2rem;
-  font-weight: 600;
-  letter-spacing: -0.05px;
-`;
-
-const SubcribeMessage = styled.span`
-  margin-bottom: 1.5rem;
-  font-size: 1.25rem;
-  letter-spacing: 0;
-`;
-
 const Copyright = styled.div`
   display: flex;
   padding-top: 3rem;
@@ -50,20 +28,14 @@ const Copyright = styled.div`
 `;
 
 const CopyrightText = styled.span`
-  letter-spacing: -0.05px;
+  font-family: 'Noto Sans KR', Arial, Helvetica, sans-serif;
+  font-size: 17.5px;
+  letter-spacing: 0.05px;
   line-height: 1;
 `;
 
 const Footer = () => (
   <Container>
-    {/* <Section>
-      <Subcribe>
-        <SubcribeTitle>태훈노트 뉴스레터를 구독해보세요!</SubcribeTitle>
-        <SubcribeMessage>
-          매주 토요일! 0명이 메일로 받아 보는 뉴스레터
-        </SubcribeMessage>
-      </Subcribe>
-    </Section> */}
     <Section>
       <Copyright>
         <CopyrightText>

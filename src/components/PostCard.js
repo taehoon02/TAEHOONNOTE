@@ -7,8 +7,10 @@ import _ from 'lodash';
 
 const Wrapper = styled.div`
   display: flex;
+  border-top: 1px #e9ecef solid;
   border-bottom: 1px #e9ecef solid;
   margin-right: -20px;
+  margin-bottom: 1rem;
   margin-left: -20px;
   font-size: 4rem;
 `;

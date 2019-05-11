@@ -105,6 +105,12 @@ const ContentHeaderCategory = styled(Link)`
   font-weight: 400;
   letter-spacing: 1px;
   text-transform: uppercase;
+  transition: color 0.2s ease;
+
+  &:hover {
+    box-shadow: none;
+    color: #aaa;
+  }
 `;
 
 const ContentHeaderTitle = styled(Link)`

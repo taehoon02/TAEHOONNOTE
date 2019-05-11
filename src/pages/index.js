@@ -13,7 +13,7 @@ const Index = ({ data }) => {
 
   return (
     <Layout title={siteTitle}>
-      <SEO keywords={[`blog`, `taehoon`, `note`]} />
+      <SEO />
       {posts.map(({ node }) => {
         return (
           <div>

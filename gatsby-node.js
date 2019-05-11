@@ -17,6 +17,14 @@ exports.createPages = ({ graphql, actions }) => {
                 }
               }
             }
+
+            allContentfulPage {
+              edges {
+                node {
+                  title
+                }
+              }
+            }
           }
         `,
       ).then(result => {
@@ -25,7 +33,8 @@ exports.createPages = ({ graphql, actions }) => {
         }
 
         const blogPost = path.resolve('./src/templates/Post.js');
-        const categoryPage = path.resolve('src/templates/Category.js');
+        const categoryPage = path.resolve('./src/templates/Category.js');
+        const metaPage = path.resolve('./src/templates/Page.js');
 
         const posts = result.data.allContentfulBasic.edges;
         posts.forEach(post => {
@@ -52,6 +61,17 @@ exports.createPages = ({ graphql, actions }) => {
             component: categoryPage,
             context: {
               category,
+            },
+          });
+        });
+
+        const pages = result.data.allContentfulPage.edges;
+        pages.forEach(page => {
+          createPage({
+            path: `/${_.kebabCase(page.node.title)}`,
+            component: metaPage,
+            context: {
+              title: page.node.title,
             },
           });
         });

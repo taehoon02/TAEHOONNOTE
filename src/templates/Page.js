@@ -6,6 +6,8 @@ import styled from 'styled-components';
 import Layout from '../components/Layout';
 import SEO from '../components/seo';
 
+import '../scss/markdown.scss';
+
 const Title = styled.div`
   padding-bottom: 3rem;
   border-bottom: 1px #e9ecef solid;

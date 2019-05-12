@@ -1,0 +1,146 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 2em;
+  letter-spacing: -0.05em;
+  margin: 0.67em 0;
+}
+
+h2 {
+  font-size: 1.5em;
+  margin: 0.83em 0;
+}
+
+h3 {
+  font-size: 1.17em;
+  margin: 1em 0;
+}
+
+h4 {
+  font-size: 1em;
+  margin: 1.33em 0;
+}
+
+h5 {
+  font-size: 0.83em;
+  margin: 1.67em 0;
+}
+
+h6 {
+  font-size: 0.75em;
+  margin: 2.33em 0;
+}
+
+a {
+  color: #3266d6;
+  cursor: pointer;
+  outline: 0 none;
+  box-shadow: none;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+  margin: 26px 0;
+}
+
+pre code {
+  font-family: 'Noto Sans', Arial, Helvetica, sans-serif !important;
+  font-size: 14px;
+  word-break: break-all;
+  word-break: break-word;
+  hyphens: auto;
+  white-space: pre-wrap;
+}
+
+strong {
+  font-weight: bold;
+  font-weight: 700;
+}
+
+em {
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+blockquote {
+  border-left: 4px solid #ddd;
+  padding: 0 15px;
+  color: #777;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+ol > li:before {
+  color: #423f37;
+  content: counter(ol, decimal) '.';
+  counter-increment: ol;
+  font-weight: 700;
+  margin-right: 0.333em;
+  position: absolute;
+  right: 100%;
+}
+
+ul > li:before {
+  background-color: #423f37;
+  border-radius: 14px 14px 14px 14px;
+  content: '';
+  height: 6px;
+  margin-right: 0.333em;
+  margin-top: 0.55em;
+  position: absolute;
+  right: 100%;
+  width: 6px;
+}
+
+ol,
+ul {
+  margin-left: 2rem;
+  padding: 0;
+}
+
+ol {
+  counter-reset: ol;
+}
+
+li + li {
+  margin-top: 0.5em;
+}
+
+ul > li {
+  position: relative;
+}
+
+ol > li {
+  position: relative;
+}
+
+li {
+  list-style: none outside none;
+}
+
+p {
+  display: block;
+  color: #4a4949;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-family: 'Noto Sans KR', Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: 17.5px;
+  letter-spacing: 0.05px;
+  line-height: 1.75;
+}

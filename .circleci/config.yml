@@ -24,6 +24,8 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
       - persist_to_workspace:
           root: ~/
+          paths:
+            - ~/
   build:
     executor: default
     steps:
@@ -35,6 +37,8 @@ jobs:
           destination: public
       - persist_to_workspace:
           root: ~/
+          paths:
+            - ~/
   deploy:
     executor: default
     steps:

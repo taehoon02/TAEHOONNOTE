@@ -13,16 +13,15 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-            - v1-deps-{{ .Branch }}-{{ checksum "package.json" }}
-            - v1-deps-{{ .Branch }}
-            - v1-deps
+            - v1-dependencies-{{ checksum "package.json" }}
+            - v1-dependencies
       - run:
           name: Install Dependencies
           command: yarn install --frozen-lockfile
       - save_cache:
           paths:
             - ~/.cache
-          key: v1-deps-{{ .Branch }}-{{ checksum "package.json" }}
+          key: v1-dependencies-{{ checksum "package.json" }}
   build:
     executor: default
     steps:

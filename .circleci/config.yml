@@ -1,10 +1,10 @@
-version: 2
+version: 2.1
 
 executors:
   default:
     working_directory: ~/TAEHOONNOTE
     docker:
-      - image: circleci/node:7.10
+      - image: circleci/node:10.15
 
 jobs:
   install:
@@ -22,6 +22,8 @@ jobs:
           paths:
             - ~/.cache
           key: v1-dependencies-{{ checksum "package.json" }}
+      - persist_to_workspace:
+          root: ~/
   build:
     executor: default
     steps:
@@ -31,13 +33,14 @@ jobs:
       - store_artifacts:
           path: ~/TAEHOONNOTE/public
           destination: public
-
+      - persist_to_workspace:
+          root: ~/
   deploy:
     executor: default
     steps:
       - attach_workspace:
           at: ~/
-      - run: yarn run deploy
+      - run: yarn run serve
 
 workflows:
   deploy:

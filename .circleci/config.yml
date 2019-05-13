@@ -2,61 +2,22 @@ version: 2.1
 
 executors:
   default:
-    working_directory: ~/project/TAEHOONNOTE
+    working_directory: ~/TAEHOONNOTE
     docker:
-      - image: circleci/node:10.15
+      - image: circleci/node:7.10
 
 jobs:
-  install:
+  deploy:
     executor: default
     steps:
-      - checkout
       - restore_cache:
           keys:
             - v1-dependencies-{{ checksum "package.json" }}
-            - v1-dependencies
-      - run:
-          name: Install Dependencies
-          command: yarn install --frozen-lockfile
+            - v1-dependencies-
+      - run: yarn install --frozen-lockfile
       - save_cache:
           paths:
-            - ~/.cache
+            - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
-      - persist_to_workspace:
-          root: ~/
-          paths:
-            - project
-  build:
-    executor: default
-    steps:
-      - attach_workspace:
-        at: ~/
-      - run: yarn run build
-      - store_artifacts:
-          path: ~/project/TAEHOONNOTE/public
-          destination: public
-      - persist_to_workspace:
-          root: ~/
-          paths:
-            - project
-  deploy:
-    executor: default
-    steps:
-      - attach_workspace:
-          at: ~/
-      - run: yarn run serve
-
-workflows:
-  deploy:
-    jobs:
-      - install
-      - build:
-          requires:
-            - install
-      - deploy:
-          filters:
-            branches:
-              only:
-                - master
-          requires:
-            - build
+      - run: yarn build
+      - run: yarn serve

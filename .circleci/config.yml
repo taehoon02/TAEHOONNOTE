@@ -2,7 +2,7 @@ version: 2.1
 
 executors:
   default:
-    working_directory: ~/project/taehoonnote
+    working_directory: ~/taehoonnote
 
 jobs:
   install:
@@ -21,10 +21,6 @@ jobs:
           key: v1-deps-{{ .Branch }}-{{ checksum "package.json" }}
           paths:
             - ~/.cache
-      - persist_to_workspace:
-          root: ~/
-          paths:
-            - project
   build:
     executor: default
     steps:
@@ -32,12 +28,10 @@ jobs:
           at: ~/
       - run: yarn run build
       - store_artifacts:
-          path: ~/project/taehoonnote/public
-          destination: dist
+          path: ~/taehoonnote/public
+          destination: public
       - persist_to_workspace:
           root: ~/
-          paths:
-            - project
   deploy:
     executor: default
     steps:

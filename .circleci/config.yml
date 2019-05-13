@@ -2,7 +2,7 @@ version: 2.1
 
 executors:
   default:
-    working_directory: ~/TAEHOONNOTE
+    working_directory: ~/project/TAEHOONNOTE
     docker:
       - image: circleci/node:10.15
 
@@ -25,7 +25,7 @@ jobs:
       - persist_to_workspace:
           root: ~/
           paths:
-            - ~/
+            - project
   build:
     executor: default
     steps:
@@ -33,12 +33,12 @@ jobs:
         at: ~/
       - run: yarn run build
       - store_artifacts:
-          path: ~/TAEHOONNOTE/public
+          path: ~/project/TAEHOONNOTE/public
           destination: public
       - persist_to_workspace:
           root: ~/
           paths:
-            - ~/
+            - project
   deploy:
     executor: default
     steps:

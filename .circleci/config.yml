@@ -1,62 +1,61 @@
-version: 2
+version: 2.1
 
-defaults: &defaults
-  docker:
-    - image: circleci/node:10.15.3
-  working_directory: ~/taehoonnote
+executors:
+  default:
+    working_directory: ~/project/taehoonnote
 
 jobs:
   install:
-    <<: *defaults
+    executor: default
     steps:
       - checkout
       - restore_cache:
           keys:
-            - dependencies-{{ checksum "yarn.lock" }}
-      - run: yarn install --frozen-lockfile
+            - v1-deps-{{ .Branch }}-{{ checksum "package.json" }}
+            - v1-deps-{{ .Branch }}
+            - v1-deps
+      - run:
+          name: Install Dependencies
+          command: yarn install --frozen-lockfile
       - save_cache:
+          key: v1-deps-{{ .Branch }}-{{ checksum "package.json" }}
           paths:
-            - node_modules
-          key: dependencies-{{ checksum "yarn.lock" }}
-
-  lint:
-    <<: *defaults
+            - ~/.cache
+      - persist_to_workspace:
+          root: ~/
+          paths:
+            - project
+  build:
+    executor: default
     steps:
-      - checkout
-      - restore_cache:
-          keys:
-            - dependencies-{{ checksum "yarn.lock" }}
-      - run: yarn lint
-
-  test:
-    <<: *defaults
-    steps:
-      - checkout
-      - restore_cache:
-          keys:
-            - dependencies-{{ checksum "yarn.lock" }}
-      - run: yarn test --runInBand --no-cache
-
-  build-and-deploy:
-    <<: *defaults
-    branch: master
-    steps:
-      - checkout
-      - restore_cache:
-          keys:
-            - dependencies-{{ checksum "yarn.lock" }}
+      - attach_workspace:
+          at: ~/
       - run: yarn run build
-      - run: yarn run deployFirebase --token=$FIREBASE_TOKEN --non-interactive --project=$FIREBASE_PROJECT
+      - store_artifacts:
+          path: ~/project/taehoonnote/public
+          destination: dist
+      - persist_to_workspace:
+          root: ~/
+          paths:
+            - project
+  deploy:
+    executor: default
+    steps:
+      - attach_workspace:
+          at: ~/
+      - run: yarn run serve
 
 workflows:
-  version: 2
-  build-and-deploy:
+  test-and-deploy:
     jobs:
       - install
-      - build-and-deploy:
+      - build:
           requires:
             - install
-          context: Firebase
+      - deploy:
           filters:
             branches:
-              only: master
+              only:
+                - master
+          requires:
+            - build

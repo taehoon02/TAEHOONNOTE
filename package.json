@@ -43,6 +43,7 @@
     "@babel/plugin-syntax-dynamic-import": "^7.2.0",
     "@babel/preset-env": "^7.4.3",
     "@babel/preset-react": "^7.0.0",
+    "@sentry/cli": "^1.42.0",
     "babel-loader": "^8.0.5",
     "babel-preset-gatsby": "^0.1.11",
     "contentful-import": "^7.4.4",

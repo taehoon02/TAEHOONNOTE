@@ -80,7 +80,7 @@
     "lint:js": "eslint . --ext .js",
     "lint:css": "stylelint \"**/*.{scss,js}\"",
     "lint": "run-p lint:*",
-    "deploy": "./node_modules/.bin/firebase deploy --token=$FIREBASE_TOKEN"
+    "deploy": "firebase use default && ./node_modules/.bin/firebase deploy --token=$FIREBASE_TOKEN"
   },
   "repository": {
     "type": "git",

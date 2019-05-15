@@ -1,5 +1,6 @@
 {
   "projects": {
-    "default": "taehoonote"
+    "default": "taehoonote",
+    "staging": "taehoonnote"
   }
 }

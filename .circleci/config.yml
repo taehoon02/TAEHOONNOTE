@@ -32,7 +32,7 @@ jobs:
           name: Gatsby Build
           command: yarn build
       - store_artifacts:
-          path: ~/circleci/TAEHOONNOTE/public
+          path: ~/TAEHOONNOTE/public
           destination: public
 
   deploy:

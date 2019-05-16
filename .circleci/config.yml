@@ -22,6 +22,10 @@ jobs:
           key: v1-npm-deps-{{ checksum "package-lock.json" }}
           paths:
             - ./node_modules
+      - persist_to_workspace:
+          root: ~/
+          paths:
+            - circleci
 
   build:
     executor: default
@@ -31,6 +35,13 @@ jobs:
       - run:
           name: Gatsby Build
           command: yarn build
+      - store_artifacts:
+          path: ~/circleci/TAEHOONNOTE/public
+          destination: public
+      - persist_to_workspace:
+          root: ~/
+          paths:
+            - circleci
 
   deploy:
     executor: default

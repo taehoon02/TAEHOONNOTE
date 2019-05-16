@@ -32,8 +32,12 @@ jobs:
           name: Gatsby Build
           command: yarn build
       - store_artifacts:
-          path: ~/TAEHOONNOTE/public
+          path: ~/circleci/TAEHOONNOTE/public
           destination: public
+      - persist_to_workspace:
+          root: ~/
+          paths:
+            - circleci
 
   deploy:
     executor: default

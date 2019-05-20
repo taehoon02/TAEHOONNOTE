@@ -112,11 +112,6 @@ export default Post;
 
 export const pageQuery = graphql`
   query PostQuery($slug: String!) {
-    site {
-      siteMetadata {
-        title
-      }
-    }
     contentfulBasic(slug: { eq: $slug }) {
       thumbnail {
         file {

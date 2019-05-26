@@ -61,9 +61,9 @@ class Layout extends React.Component {
         <Wrapper>
           <Container>
             <ContentArea>{children}</ContentArea>
-            <WidgetArea>
+            {/* <WidgetArea>
               <Instagram />
-            </WidgetArea>
+            </WidgetArea> */}
           </Container>
         </Wrapper>
         <Footer />

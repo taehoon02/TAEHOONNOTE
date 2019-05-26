@@ -112,7 +112,7 @@ class Header extends React.Component {
   }
 
   render() {
-    const { instagramFollowers, githubFollowers } = this.state;
+    // const { instagramFollowers, githubFollowers } = this.state;
     return (
       <Container>
         <Section>
@@ -123,7 +123,7 @@ class Header extends React.Component {
               target="_blank"
             >
               <i className="fab fa-instagram" />
-              <SocialText>{instagramFollowers}</SocialText>
+              {/* <SocialText>{instagramFollowers}</SocialText> */}
             </SocialLink>
             <SocialLink
               github
@@ -131,7 +131,7 @@ class Header extends React.Component {
               target="_blank"
             >
               <i className="fab fa-github" />
-              <SocialText>{githubFollowers}</SocialText>
+              {/* <SocialText>{githubFollowers}</SocialText> */}
             </SocialLink>
           </SocialWrapper>
         </Section>

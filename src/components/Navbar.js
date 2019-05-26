@@ -70,9 +70,9 @@ const Navbar = () => (
       </MenuWrapper>
     </Section>
     <Section>
-      <SearchIcon href="#search">
+      {/* <SearchIcon href="#search">
         <i className="fas fa-search" />
-      </SearchIcon>
+      </SearchIcon> */}
     </Section>
   </Container>
 );

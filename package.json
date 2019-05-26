@@ -77,6 +77,8 @@
     "lint:js": "eslint . --ext .js",
     "lint:css": "stylelint \"**/*.{scss,js}\"",
     "lint": "run-p lint:*",
+    "set:dev": "export NODE_ENV=development",
+    "set:pro": "export NODE_ENV=production",
     "deploy": "firebase use staging && ./node_modules/.bin/firebase deploy --token=$FIREBASE_TOKEN"
   },
   "repository": {

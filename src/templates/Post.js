@@ -4,6 +4,7 @@ import { Link, graphql } from 'gatsby';
 
 import styled from 'styled-components';
 import _ from 'lodash';
+import Disqus from 'gatsby-plugin-disqus';
 import Layout from '../components/Layout';
 import SEO from '../components/seo';
 
@@ -100,6 +101,7 @@ const Post = ({ data }) => {
           __html: post.content.childMarkdownRemark.html,
         }}
       />
+      <Disqus identifier={post.slug} title={post.title} />
     </Layout>
   );
 };

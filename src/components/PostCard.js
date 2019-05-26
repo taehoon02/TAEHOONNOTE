@@ -38,7 +38,7 @@ const MediaImg = styled.img`
   position: relative;
   display: block;
   overflow: hidden;
-  width: 380px;
+  width: 100%;
   height: 357px;
   margin-top: -1px;
   background-position: center;

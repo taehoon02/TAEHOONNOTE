@@ -29,7 +29,7 @@ const ContentArea = styled.div`
   display: flex;
   width: 100%;
   min-width: 0;
-  max-width: 840px;
+  max-width: 1280px;
   flex: 0 0 840px;
   flex-direction: column;
   flex-wrap: wrap;
